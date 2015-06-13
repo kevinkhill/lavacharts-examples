@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class AreaChartController extends Controller
+class LineChartController extends Controller
 {
     public function index()
     {
