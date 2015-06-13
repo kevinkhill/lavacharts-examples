@@ -34,10 +34,18 @@ class EventsController extends Controller
         $linechart = Lava::LineChart('Space Title')
                           ->dataTable($temperatures)
                           ->title('Weather in October')
-                          ->events([
-                            'ready' => Lava::Ready('test')
-                          ]);
+                          ->backgroundColor(Lava::BackgroundColor([
+                                'fill' => '#CFCFCF',
+                                'stroke' => '#0000CC',
+                                'strokeWidth' => 4
+                            ]))
+                          ->events(array(
+                            Lava::Ready('readyCallback'),
+                            Lava::MouseOver('mouseOverCallback'),
+                            Lava::MouseOut('mouseOutCallback'),
+                            Lava::Select('selectCallback')
+                          ));
 
-        return View::make('test');
+        return View::make('events');
     }
 }
