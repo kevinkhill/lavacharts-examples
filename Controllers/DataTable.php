@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class DataTablePlusController extends Controller
+class DataTableController extends Controller
 {
     public function csv()
     {
