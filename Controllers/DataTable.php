@@ -18,21 +18,24 @@ class DataTableController extends Controller
         return View::make('csv');
     }
 
+    public function timeofday()
+    {
         $emails  = Lava::DataTable();
 
-    $emails->addColumn('timeofday', 'When')
-          ->addNumberColumn('Emails')
-          ->addRow([[3,21,0], rand(1,50)])
-          ->addRow([[3,45,0], rand(1,50)])
-          ->addRow([[4,12,0], rand(1,50)])
-          ->addRow([[4,50,0], rand(1,50)])
-          ->addRow([[5,30,0], rand(1,50)]);
+        $emails->addColumn('timeofday', 'When')
+              ->addNumberColumn('Emails')
+              ->addRow([[3,21,0], rand(1,50)])
+              ->addRow([[3,45,0], rand(1,50)])
+              ->addRow([[4,12,0], rand(1,50)])
+              ->addRow([[4,50,0], rand(1,50)])
+              ->addRow([[5,30,0], rand(1,50)]);
 
-    Lava::BarChart('Emails')
-        ->setOptions(array(
-            'datatable'   => $emails,
-            'orientation' => 'vertical'
-        ));
+        Lava::BarChart('Emails')
+            ->setOptions(array(
+                'datatable'   => $emails,
+                'orientation' => 'vertical'
+            ));
 
-    return View::make('timeofday');
+        return View::make('timeofday');
+    }
 }
