@@ -1,0 +1,10 @@
+{
+    "name": "kevin/lavacharts-examples",
+    "description": "Example charts using Laravel and Lavacharts",
+    "authors": [
+        {
+            "name": "Kevin Hill",
+            "email": "kevinkhill@gmail.com"
+        }
+    ]
+}
