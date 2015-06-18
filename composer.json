@@ -1,10 +1,17 @@
 {
     "name": "khill/lavacharts-examples",
     "description": "Example charts using Laravel and Lavacharts",
+    "license": "MIT",
     "authors": [
         {
             "name": "Kevin Hill",
             "email": "kevinkhill@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Khill\\Lavacharts\\Examples\\Controllers\\": "Controllers/",
+            "Khill\\Lavacharts\\Examples\\Views\\": "Views/"
+        }
+    },
 }
