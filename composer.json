@@ -13,5 +13,5 @@
             "Khill\\Lavacharts\\Examples\\Controllers\\": "Controllers/",
             "Khill\\Lavacharts\\Examples\\Views\\": "Views/"
         }
-    },
+    }
 }
