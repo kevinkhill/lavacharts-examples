@@ -16,10 +16,7 @@ class BarChartController extends Controller
               ->addRow(array('Apples', rand(1000,5000)))
               ->addRow(array('Fish', rand(1000,5000)));
 
-        Lava::BarChart('Votes')
-            ->setOptions(array(
-                'datatable' => $votes
-            ));
+        Lava::BarChart('Votes', $votes);
 
         return View::make('bar');
     }
