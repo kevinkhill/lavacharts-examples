@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace Lavacharts\Examples\Controllers;
 
 class BarChartController extends Controller
 {
