@@ -10,8 +10,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Khill\\Lavacharts\\Examples\\Controllers\\": "Controllers/",
-            "Khill\\Lavacharts\\Examples\\Views\\": "Views/"
+            "Khill\\Lavacharts\\Examples\\": "src/"
         }
     }
 }
