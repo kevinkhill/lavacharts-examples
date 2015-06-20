@@ -16,8 +16,6 @@ abstract class Controller extends BaseController
 {
     public function __construct()
     {
-        parent::__construct();
-
         View::addNamespace('examples', __DIR__.'/../Views');
     }
 }
