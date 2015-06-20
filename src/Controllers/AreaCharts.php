@@ -23,14 +23,13 @@ class AreaCharts extends Controller
             ->addRow(array('2013', 842367))
             ->addRow(array('2014', 873490));
 
-        Lava::AreaChart('Population')
-            ->setOptions(array(
-              'datatable' => $population,
+        Lava::AreaChart('Population', $population)
+            ->setOptions([
               'title' => 'Population Growth',
-              'legend' => Lava::Legend(array(
+              'legend' => Lava::Legend([
                 'position' => 'in'
-              ))
-            ));
+              ])
+            ]);
 
         return View::make('examples::area');
     }
