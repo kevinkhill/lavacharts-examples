@@ -2,6 +2,8 @@
 
 namespace Khill\Lavacharts\Examples\Controllers;
 
+use Lava;
+
 class BarCharts extends Controller
 {
     public function index()

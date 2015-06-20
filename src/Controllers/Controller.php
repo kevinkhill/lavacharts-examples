@@ -12,6 +12,7 @@ if ( version_compare(\Illuminate\Foundation\Application::VERSION, '5.0.0', 'lt')
 }
 */
 
-abstract class Controller extends BaseController {
-
+abstract class Controller extends BaseController
+{
+    //
 }
