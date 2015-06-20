@@ -2,7 +2,7 @@
 
 namespace Khill\Lavacharts\Examples\Controllers;
 
-class BarCharts //extends Controller
+class BarCharts extends Controller
 {
     public function index()
     {
