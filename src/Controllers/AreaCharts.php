@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Controllers;
+namespace Khill\Lavacharts\Examples\Controllers;
 
-class AreaChartController extends Controller
+use Lava;
+use View;
+
+class AreaCharts extends Controller
 {
     public function index()
     {
@@ -29,6 +32,6 @@ class AreaChartController extends Controller
               ))
             ));
 
-        return View::make('area');
+        return View::make('examples::area');
     }
 }

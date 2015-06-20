@@ -3,12 +3,13 @@
 namespace Khill\Lavacharts\Examples\Controllers;
 
 use Lava;
+use View;
 
 class BarCharts extends Controller
 {
     public function index()
     {
-        $votes  = Lava::DataTable();
+        $votes = Lava::DataTable();
 
         $votes->addStringColumn('Food')
               ->addNumberColumn('Votes')
@@ -20,6 +21,6 @@ class BarCharts extends Controller
 
         Lava::BarChart('Votes', $votes);
 
-        return View::make('bar');
+        return View::make('examples::bar');
     }
 }
