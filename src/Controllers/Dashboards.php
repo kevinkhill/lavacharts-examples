@@ -7,7 +7,7 @@ use View;
 
 class Dashboards extends Controller
 {
-	public function index()
+	public function pie()
 	{
 	    $datatable = Lava::DataTable();
 	    $datatable->addStringColumn('Name');

@@ -33,7 +33,7 @@ class Ajax extends Controller
         return View::make('examples::ajaxTest');
     }
 
-    public function getDataTableJson()
+    public function getData()
     {
         $tz = 'America/Los_Angeles';
 
