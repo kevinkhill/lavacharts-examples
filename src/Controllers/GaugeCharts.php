@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Controllers;
+namespace Khill\Lavacharts\Examples\Controllers;
 
-class GaugeChartController extends Controller
+use Lava;
+use View;
+
+class GaugeCharts extends Controller
 {
     public function index()
     {
@@ -30,6 +33,6 @@ class GaugeChartController extends Controller
                 )
             ));
 
-        return View::make('gauge');
+        return View::make('examples::gauge');
     }
 }

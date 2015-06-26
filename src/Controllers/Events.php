@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Controllers;
+namespace Khill\Lavacharts\Examples\Controllers;
 
-class EventsController extends Controller
+use Lava;
+use View;
+
+class Events extends Controller
 {
     public function index()
     {
@@ -46,6 +49,6 @@ class EventsController extends Controller
                             Lava::Select('selectCallback')
                           ));
 
-        return View::make('events');
+        return View::make('examples::events');
     }
 }

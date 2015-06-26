@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Controllers;
+namespace Khill\Lavacharts\Examples\Controllers;
 
-class LineChartController extends Controller
+use Lava;
+use View;
+
+class LineCharts extends Controller
 {
     public function index()
     {
@@ -31,8 +34,7 @@ class LineChartController extends Controller
                      ->addRow(array('2014-10-17', 72, 66, 60))
                      ->addRow(array('2014-10-18', 63, 62, 62));
 
-        $linechart = Lava::LineChart('Space Title')
-                          ->dataTable($temperatures)
+        $linechart = Lava::LineChart('Space Title', $temperatures)
                           ->title('Weather in October')
                           ->backgroundColor(Lava::BackgroundColor([
                                 'fill' => '#CFCFCF',
@@ -40,6 +42,6 @@ class LineChartController extends Controller
                                 'strokeWidth' => 4
                             ]));
 
-        return View::make('line');
+        return View::make('examples::line');
     }
 }

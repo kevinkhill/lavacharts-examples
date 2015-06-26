@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Controllers;
+namespace Khill\Lavacharts\Examples\Controllers;
 
-class ColumnChartController extends Controller
+use Lava;
+use View;
+
+class ColumnCharts extends Controller
 {
     public function index()
     {
@@ -27,6 +30,6 @@ class ColumnChartController extends Controller
               ))
             ));
 
-        return View::make('column');
+        return View::make('examples::column');
     }
 }

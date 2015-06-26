@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Controllers;
+namespace Khill\Lavacharts\Examples\Controllers;
 
-class TestsController extends Controller
+use Lava;
+use View;
+
+class Tests extends Controller
 {
     public function responsive()
     {
@@ -35,7 +38,7 @@ class TestsController extends Controller
                           ->dataTable($temperatures)
                           ->title('Weather in October');
 
-        return View::make('responsive');
+        return View::make('examples::responsive');
     }
 
     public function multi()
@@ -137,6 +140,6 @@ class TestsController extends Controller
                   )
                 ));
 
-        return View::make('multi');
+        return View::make('examples::multi');
     }
 }

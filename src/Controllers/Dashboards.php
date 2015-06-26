@@ -1,24 +1,12 @@
-<?php namespace App\Http\Controllers;
+<?php
+
+namespace Khill\Lavacharts\Examples\Controllers;
 
 use Lava;
+use View;
 
-class DashboardController extends Controller {
-
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		$this->middleware('guest');
-	}
-
-	/**
-	 * Show the application welcome screen to the user.
-	 *
-	 * @return Response
-	 */
+class Dashboards extends Controller
+{
 	public function index()
 	{
 	    $datatable = Lava::DataTable();
@@ -52,7 +40,7 @@ class DashboardController extends Controller {
 	    $dash = Lava::Dashboard('MyDash')
 	                 ->bind('MyPie', $control, $chart);
 
-		return view('dashboard/pie-dash');
+		return view('examples::dashboard/pie-dash');
 	}
 
 }

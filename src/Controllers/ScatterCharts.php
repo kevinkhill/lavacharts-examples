@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Controllers;
+namespace Khill\Lavacharts\Examples\Controllers;
 
-class ScatterChartController extends Controller
+use Lava;
+use View;
+
+class ScatterCharts extends Controller
 {
     public function index()
     {

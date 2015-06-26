@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Controllers;
+namespace Khill\Lavacharts\Examples\Controllers;
 
-class PieChartsController extends Controller
+use Lava;
+use View;
+
+class PieCharts extends Controller
 {
     public function index()
     {
@@ -15,9 +18,8 @@ class PieChartsController extends Controller
                 ->addRow(array('See Actors Other Work', 4))
                 ->addRow(array('Settle Argument', 89));
 
-        Lava::PieChart('IMDB')
+        Lava::PieChart('IMDB', $reasons)
             ->setOptions(array(
-              'datatable' => $reasons,
               'title' => 'Reasons I visit IMDB',
               'is3D' => true,
               'slices' => array(
@@ -33,7 +35,7 @@ class PieChartsController extends Controller
               )
             ));
 
-        return View::make('pie');
+        return View::make('examples::pie');
     }
 
     public function donut()
@@ -47,12 +49,8 @@ class PieChartsController extends Controller
                 ->addRow(array('See Actors Other Work', 4))
                 ->addRow(array('Settle Argument', 89));
 
-        Lava::DonutChart('IMDB')
-            ->setOptions(array(
-              'datatable' => $reasons,
-              'title' => 'Reasons I visit IMDB'
-            ));
+        Lava::DonutChart('IMDB', $reasons)->title('Reasons I visit IMDB');
 
-        return View::make('donut');
+        return View::make('examples::donut');
     }
 }

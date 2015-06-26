@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Controllers;
+namespace Khill\Lavacharts\Examples\Controllers;
 
-class GeoChartController extends Controller
+use Lava;
+use View;
+
+class GeoCharts extends Controller
 {
     public function index()
     {
@@ -17,11 +20,8 @@ class GeoChartController extends Controller
                    ->addRow(array('France', 600))
                    ->addRow(array('RU', 700));
 
-        Lava::GeoChart('Popularity')
-            ->setOptions(array(
-              'datatable' => $popularity
-            ));
+        Lava::GeoChart('Popularity', $popularity);
 
-        return View::make('geo');
+        return View::make('examples::geo');
     }
 }

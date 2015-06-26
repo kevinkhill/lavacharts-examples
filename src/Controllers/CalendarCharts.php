@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Controllers;
+namespace Khill\Lavacharts\Examples\Controllers;
 
-class CalendarChartController extends Controller
+use Lava;
+use View;
+
+class CalendarCharts extends Controller
 {
     public function index()
     {
@@ -42,6 +45,6 @@ class CalendarChartController extends Controller
                 ))
             ));
 
-        return View::make('calendar');
+        return View::make('examples::calendar');
     }
 }

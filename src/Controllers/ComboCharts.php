@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Controllers;
+namespace Khill\Lavacharts\Examples\Controllers;
 
-class ComboChartController extends Controller
+use Lava;
+use View;
+
+class ComboCharts extends Controller
 {
     public function index()
     {
@@ -37,6 +40,6 @@ class ComboChartController extends Controller
               )
             ));
 
-        return View::make('combo');
+        return View::make('examples::combo');
     }
 }

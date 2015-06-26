@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Controllers;
+namespace Khill\Lavacharts\Examples\Controllers;
 
-class AjaxController extends Controller
+use Lava;
+use View;
+
+class Ajax extends Controller
 {
     public function index()
     {
@@ -27,7 +30,7 @@ class AjaxController extends Controller
           ->dataTable($temperatures2)
           ->title('Weather in November');
 
-        return View::make('ajaxTest');
+        return View::make('examples::ajaxTest');
     }
 
     public function getDataTableJson()
@@ -129,7 +132,7 @@ class AjaxController extends Controller
                 )
               ));
 
-        return View::make('multiAjax');
+        return View::make('examples::multiAjax');
     }
 
     function getMultiData()
