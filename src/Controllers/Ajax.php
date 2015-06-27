@@ -192,4 +192,66 @@ class Ajax extends Controller
             'imdb2' => $reasons->toJson()
         ];
     }
+
+    public function formats()
+    {
+      $weekSales = Lava::DataTable();
+    $formatter = Lava::NumberFormat(array(
+        'pattern' => '###,###',
+        'prefix' => '$',
+    ));
+    $weekSales->addDateColumn('Week Start');
+    $weekSales->addNumberColumn('Here', $formatter);
+    $weekSales->addNumberColumn('There', $formatter);
+    $weekSales->addNumberColumn('Place', $formatter);
+    $weekSales->addNumberColumn('Other Place', $formatter);
+    $weekSales->addRow(['2015-1-1', 40000,70000,90000,20000]);
+    $weekSales->addRow(['2015-1-2', 30000,89000,69000,36000]);
+    $weekSales->addRow(['2015-1-3', 40000,40000,40000,30000]);
+    $weekSales->addRow(['2015-1-4', 60000,99000,27000,41000]);
+    $weekSales->addRow(['2015-1-5', 40000,35000,73000,26000]);
+    $weekSales->addRow(['2015-1-6', 80000,46000,50000,20000]);
+    $weekSales->addRow(['2015-1-7', 80000,46000,50000,20000]);
+    $weekSales->addRow(['2015-1-8', 80000,46000,50000,20000]);
+
+    Lava::ColumnChart('weekSales')
+        ->setOptions(array(
+            'datatable' => $weekSales,
+            'title' => 'Company Performance',
+            'barGroupWidth' => '20%',
+            'titleTextStyle' => Lava::TextStyle(array(
+                'color' => '#eb6b2c',
+                'fontSize' => 14
+            )),));
+
+//dd(json_decode($weekSales->toJson()));
+
+      return View::make('examples::ajax/formats');
+    }
+
+    public function getFormatsData()
+    {
+   $weekSales = Lava::DataTable();
+        $formatter = Lava::NumberFormat(array(
+            'pattern' => '###,###',
+            'prefix' => '$',
+        ));
+        $weekSales->addDateColumn('Week Start');
+        $weekSales->addNumberColumn('Here', $formatter);
+        $weekSales->addNumberColumn('There', $formatter);
+        $weekSales->addNumberColumn('Place', $formatter);
+        $weekSales->addNumberColumn('Other Place', $formatter);
+        $weekSales->addRow(['2015-1-1',3600,6600,1600,4600]);
+        $weekSales->addRow(['2015-1-2',7600,2600,4600,7600]);
+        $weekSales->addRow(['2015-1-3',7600,4600,7600,2600]);
+        $weekSales->addRow(['2015-1-4',1600,4600,2600,8600]);
+        $weekSales->addRow(['2015-1-5',3600,8600,4600,9600]);
+        $weekSales->addRow(['2015-1-6',3600,6600,5600,9600]);
+        $weekSales->addRow(['2015-1-7',9600,5200,1600,3600]);
+        $weekSales->addRow(['2015-1-8',7600,6200,5600,8600]);
+
+        $jsonData['graph'] = $weekSales->toJson();
+
+        return $jsonData;
+    }
 }
