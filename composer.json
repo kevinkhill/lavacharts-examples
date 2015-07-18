@@ -9,9 +9,6 @@
         }
     ],
     "autoload": {
-        "classmap": [
-            "src/Controllers"
-        ],
         "psr-4": {
             "Khill\\Lavacharts\\Examples\\": "src/"
         }

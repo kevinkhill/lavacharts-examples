@@ -4,7 +4,7 @@ namespace Khill\Lavacharts\Examples;
 
 use \Illuminate\Support\ServiceProvider;
 
-class LavachartsExamplesServiceProvider extends ServiceProvider
+class ExamplesServiceProvider extends ServiceProvider
 {
     protected $defer = false;
 
@@ -17,9 +17,9 @@ class LavachartsExamplesServiceProvider extends ServiceProvider
             $this->package('khill/lavacharts/examples');
         }
 
-        include __DIR__.'/routes.php';
+        include __DIR__.'/../routes.php';
 
-        $this->loadViewsFrom(__DIR__.'/../views', 'lavacharts-examples');
+        $this->loadViewsFrom(__DIR__.'/Views', 'lavacharts-examples');
     }
 
     public function register()
