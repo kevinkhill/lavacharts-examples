@@ -34,13 +34,16 @@ Route::group(['namespace' => '\Khill\Lavacharts\Examples\Controllers'], function
             Route::get('pie',   'Datatables@csvPie');
             Route::get('download',  'Datatables@download');
         });
-        
+
         Route::get('eloquent',  'Datatables@eloquent');
         Route::get('timeofday', 'Datatables@timeofday');
     });
 
     Route::group(['prefix' => 'dashboards'], function()
     {
-        Route::get('pie', 'Dashboards@pie');
+        Route::get('one-to-one',   'Dashboards@oneToOne');
+        Route::get('many-to-one',  'Dashboards@manyToOne');
+        Route::get('one-to-many',  'Dashboards@oneToMany');
+        Route::get('many-to-many', 'Dashboards@manyToMany');
     });
 });

@@ -22,13 +22,13 @@ class Ajax extends Controller
                     ->addNumberColumn('Mean Temp')
                     ->addNumberColumn('Min Temp');
 
-        Lava::LineChart('Chart1')
-          ->dataTable($temperatures1)
-          ->title('Weather in October');
+        Lava::LineChart('Chart1', $temperatures1, [
+          'title' => 'Weather in October'
+        ]);
 
-        Lava::LineChart('Chart2')
-          ->dataTable($temperatures2)
-          ->title('Weather in November');
+        Lava::LineChart('Chart2', $temperatures2, [
+          'title' => 'Weather in November'
+        ]);
 
         return View::make('examples::ajaxTest');
     }
@@ -46,7 +46,12 @@ class Ajax extends Controller
                     ->addNumberColumn('Min Temp');
 
         foreach(range(1, 30) as $day) {
-          $temperatures1->addRow(array('2014-10-'.$day, rand(50,90), rand(50,90), rand(50,90)));
+          $temperatures1->addRow([
+            '2014-10-'.$day,
+            rand(50,90),
+            rand(50,90),
+            rand(50,90)
+          ]);
         }
 
         $temperatures2->addDateColumn('Date')
@@ -55,7 +60,12 @@ class Ajax extends Controller
                     ->addNumberColumn('Min Temp');
 
         foreach(range(1, 30) as $day) {
-          $temperatures2->addRow(array('2014-11-'.$day, rand(50,90), rand(50,90), rand(50,90)));
+          $temperatures2->addRow([
+            '2014-11-'.$day,
+            rand(50,90),
+            rand(50,90),
+            rand(50,90)
+          ]);
         }
 
         return array(
@@ -96,41 +106,37 @@ class Ajax extends Controller
                ));
 
 
-         Lava::PieChart('IMDB')
-              ->setOptions(array(
-                'datatable' => $reasons,
-                'title' => 'Reasons I visit IMDB',
-                'is3D' => true,
-                'slices' => array(
-                  Lava::Slice(array(
-                    'offset' => 0.2
-                  )),
-                  Lava::Slice(array(
-                    'offset' => 0.25
-                  )),
-                  Lava::Slice(array(
-                    'offset' => 0.3
-                  ))
-                )
-              ));
+         Lava::PieChart('IMDB', $reasons, [
+            'title' => 'Reasons I visit IMDB',
+            'is3D' => true,
+            'slices' => array(
+              Lava::Slice(array(
+                'offset' => 0.2
+              )),
+              Lava::Slice(array(
+                'offset' => 0.25
+              )),
+              Lava::Slice(array(
+                'offset' => 0.3
+              ))
+            )
+          ]);
 
-          Lava::PieChart('IMDB2')
-              ->setOptions(array(
-                'datatable' => $reasons,
-                'title' => 'Reasons I visit IMDB',
-                'is3D' => true,
-                'slices' => array(
-                  Lava::Slice(array(
-                    'offset' => 0.2
-                  )),
-                  Lava::Slice(array(
-                    'offset' => 0.25
-                  )),
-                  Lava::Slice(array(
-                    'offset' => 0.3
-                  ))
-                )
-              ));
+          Lava::PieChart('IMDB2', $reasons, [
+            'title' => 'Reasons I visit IMDB',
+            'is3D' => true,
+            'slices' => array(
+              Lava::Slice(array(
+                'offset' => 0.2
+              )),
+              Lava::Slice(array(
+                'offset' => 0.25
+              )),
+              Lava::Slice(array(
+                'offset' => 0.3
+              ))
+            )
+          ]);
 
         return View::make('examples::multiAjax');
     }

@@ -19,7 +19,7 @@ class ExamplesServiceProvider extends ServiceProvider
 
         include __DIR__.'/../routes.php';
 
-        $this->loadViewsFrom(__DIR__.'/Views', 'lavacharts-examples');
+        $this->loadViewsFrom(__DIR__.'/Views', 'examples');
     }
 
     public function register()
@@ -29,6 +29,6 @@ class ExamplesServiceProvider extends ServiceProvider
 
     public function provides()
     {
-        return ['lavacharts-examples'];
+        return ['examples'];
     }
 }
